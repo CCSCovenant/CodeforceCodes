@@ -1,28 +1,25 @@
 import java.util.Scanner;
-
 public class C {
     static Scanner sc = new Scanner(System.in);
-
     public static void main(String[] args) {
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
             Solve();
         }
-
-    }private static void Solve(){
+    }
+    private static void Solve() {
         int n = sc.nextInt();
         int[] a = new int[n];
         long ans = 0;
-        for (int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        for (int i=0;i<n-1;i++){
-           if (a[i]>a[i+1]){
-             ans += a[i]-a[i+1];
-           }
+        for (int i = 0; i < n - 1; i++) {
+            if (a[i] > a[i + 1]) {
+                ans += a[i] - a[i + 1];
+            }
         }
         System.out.println(ans);
-
     }
 }
 /***

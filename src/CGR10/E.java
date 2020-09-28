@@ -1,11 +1,9 @@
 import java.util.Scanner;
-
 public class E {
     static Scanner sc = new Scanner(System.in);
     static long[][] A;
     static boolean[][] B;
     static int n;
-
     public static void main(String[] args) {
         n = sc.nextInt();
         A = new long[n][n];
@@ -30,36 +28,34 @@ public class E {
             Solve();
         }
     }
-
     private static void Solve() {
         long ans = sc.nextLong();
         StringBuilder RQ = new StringBuilder();
         int xi = 0;
         int yi = 0;
-
-        RQ.append((xi+1)+" "+(yi+1)+"\n");
-        for (int i=0;i<2*(n-1);i++){
-            if (xi<n-1&&yi<n-1){
-                if (getBit(ans,i)==B[xi][yi+1]){
+        RQ.append((xi + 1) + " " + (yi + 1) + "\n");
+        for (int i = 0; i < 2 * (n - 1); i++) {
+            if (xi < n - 1 && yi < n - 1) {
+                if (getBit(ans, i) == B[xi][yi + 1]) {
                     yi++;
-                }else {
+                } else {
                     xi++;
                 }
-                RQ.append((xi+1)+" "+(yi+1)+"\n");
-            }else {
-                if (xi<n-1){
+                RQ.append((xi + 1) + " " + (yi + 1) + "\n");
+            } else {
+                if (xi < n - 1) {
                     xi++;
-                    RQ.append((xi+1)+" "+(yi+1)+"\n");
-                }else {
+                    RQ.append((xi + 1) + " " + (yi + 1) + "\n");
+                } else {
                     yi++;
-                    RQ.append((xi+1)+" "+(yi+1)+"\n");
+                    RQ.append((xi + 1) + " " + (yi + 1) + "\n");
                 }
             }
         }
         System.out.println(RQ);
         System.out.flush();
     }
-    private static boolean getBit(long n,long bit){
-        return ((n>>(bit+1))&1)==1;
+    private static boolean getBit(long n, long bit) {
+        return ((n >> (bit + 1)) & 1) == 1;
     }
 }
